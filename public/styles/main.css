@@ -1,0 +1,41 @@
+/* 
+Changing color of buttons and text
+ */
+
+.btn-secondary {
+  background-color: #e75480;
+  border-color: #e71655;
+}
+
+.btn-secondary:hover {
+  background-color: #e71655;
+  border-color: #e71655;
+}
+
+.btn-secondary:active:focus {
+  background-color: #e75480;
+  border-color: #e71655;
+}
+
+.btn-primary {
+  background-color: #1f6807;
+  border-color: #154406;
+}
+
+.btn-primary:hover {
+  background-color: #154406;
+  border-color: #154406;
+}
+
+.btn-primary:active:focus {
+  background-color: #1f6807;
+  border-color: #154406;
+}
+
+.nav-link {
+  color: #154406;
+}
+
+.nav-link:hover {
+  color: #1f6807;
+}
