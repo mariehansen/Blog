@@ -8,7 +8,7 @@
             <!-- Display post creation -->
             <div class="container d-grid gap-2 d-sm-flex justify-content-sm-center">
                 <form action="/submitPost" method="POST">
-                    <input type="text" name="blogTitle" placeholder="Title"
+                    <input type="text" name="blogTitle" required placeholder="Title" autocomplete="off"
                         class="p-4 p-md-3 mb-3 rounded bg-body-secondary form-control">
                     <br>
                     <textarea name="blogPost" id="blogPost" rows="20" cols="100" required placeholder="Type post here"
