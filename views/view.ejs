@@ -1,0 +1,38 @@
+<%- include("partials/header.ejs") %>
+    <div class="px-4 py-5 my-5 text-left">
+        <img class="d-block mx-auto mb-4" src="images/blog.png" alt="" width="72">
+        <h1 class="display-5 fw-bold text-body-emphasis text-center">View Posts</h1>
+        <div class="col-lg-10 mx-auto">
+            <p class="lead mb-4 text-center">View past posts</p>
+
+            <!-- Loop through all existing posts and display them on the site -->
+            <% if (locals.allPosts.length !=0) { %>
+                <% for (let i=0; i < allPosts.length; i++) { const post=allPosts[i]; const title=postTitles[i];%>
+                    <div class="container my-5 text-left">
+                        <div class="p-5 text-left bg-body-tertiary rounded-3">
+                            <h3 class="text-body-emphasis">
+                                <%= title %>
+                            </h3>
+                            <p class="lead">
+                                <!-- < % = post %> Must use - to inlude new line and HTML elements -->
+                                <%- post %>
+                            </p>
+                            <!-- Each item is able to be edited or deleted -->
+                            <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+                                <form action="/edit" method="POST"><input type="hidden" name="edit"
+                                        value="<%=i%>"><button type="button sumbit"
+                                        class="btn btn-primary btn-lg px-4 gap-3">Edit
+                                        Post</button></form>
+                                <form action="/view" method="POST"><input type="hidden" name="delete"
+                                        value="<%=i%>"><button type="button submit"
+                                        class=" btn btn-danger btn-lg px-4">Delete
+                                        Post</button></form>
+                            </div>
+                        </div>
+                    </div>
+                    <% } %>
+
+        </div>
+    </div>
+    <% } %>
+        <%- include("partials/footer.ejs") %>

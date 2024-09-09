@@ -1,0 +1,22 @@
+<%- include("partials/header.ejs") %>
+    <div class="px-4 py-5 my-5 text-center">
+        <img class="d-block mx-auto mb-4" src="images/blog.png" alt="" width="72">
+        <h1 class="display-5 fw-bold text-body-emphasis">Create Post:</h1>
+        <div class="col-lg-6 mx-auto">
+            <p class="lead mb-4">Create your post below:</p>
+
+            <!-- Display post creation -->
+            <div class="container d-grid gap-2 d-sm-flex justify-content-sm-center">
+                <form action="/submitPost" method="POST">
+                    <input type="text" name="blogTitle" placeholder="Title"
+                        class="p-4 p-md-3 mb-3 rounded bg-body-secondary form-control">
+                    <br>
+                    <textarea name="blogPost" id="blogPost" rows="20" cols="100" required placeholder="Type post here"
+                        class="p-4 p-md-3 mb-3 rounded bg-body-secondary form-control"></textarea>
+                    <br><br>
+                    <button type="button submit" class="btn btn-primary btn-lg px-4 gap-3">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <%- include("partials/footer.ejs") %>
