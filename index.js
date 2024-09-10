@@ -82,14 +82,15 @@ app.post("/editPost", (req, res) => {
   title = req.body.blogTitle;
   number = req.body.number;
 
-  console.log("POST: " + blog);
-  console.log("Number: ", number);
-
   if (number != -1) {
     allPosts[number] = blog;
     postTitles[number] = title;
   }
   res.redirect("/view");
+});
+
+app.get("/:universalURL", (req, res) => {
+  res.render("error.ejs");
 });
 
 app.listen(port, () => {
